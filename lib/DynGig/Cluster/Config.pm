@@ -182,7 +182,7 @@ sub AUTOLOAD
 
         if ( defined $key && defined $value ) ## find clusters by key:value
         {
-            my @list = grep { $V->{$table}{$value}{$_} }
+            my @list = grep { $K->{$table}{$key}{$_} eq $value }
                 keys %{ $K->{$table}{$key} };
 
             return wantarray ? @list : \@list;
